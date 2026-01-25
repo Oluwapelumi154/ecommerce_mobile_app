@@ -1,5 +1,6 @@
 import 'package:ecommerce_mobile_app/core/theme/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -19,16 +20,30 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> NavigationMenus = [
-      {"iconDefault": Icon(Icons.home), "iconActive": "", "title": "Home"},
-      {"iconDefault": Icon(Icons.search_outlined), "title": "Search"},
-      {"iconDefault": Icon(Icons.shopping_cart_outlined), "title": "Cart"},
-      {"iconDefault": Icon(Icons.person_2_outlined), "title": "Profile"},
+      {"iconDefault": Icon(Icons.home), "title": "Home", "path": "/home"},
+      {
+        "iconDefault": Icon(Icons.search_outlined),
+        "title": "Search",
+        "path": "/search",
+      },
+      {
+        "iconDefault": Icon(Icons.shopping_cart_outlined),
+        "title": "Cart",
+        "path": "/cart",
+      },
+      {
+        "iconDefault": Icon(Icons.person_2_outlined),
+        "title": "Profile",
+        "path": "/profile",
+      },
     ];
 
     void onItemTapped(int selectedIndex) {
+      final menu = NavigationMenus[selectedIndex];
       setState(() {
         currentIndex = selectedIndex;
       });
+      context.push(menu['path']!);
     }
 
     return Container(

@@ -94,6 +94,7 @@ class _HomePageState extends State<HomePage> {
                   itemBuilder: (context, int index) {
                     final product = products[index];
                     return ProductCard(
+                      id: product.id,
                       image: product.image,
                       title: product.title,
                       price: product.price,

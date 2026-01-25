@@ -1,8 +1,26 @@
 import 'package:ecommerce_mobile_app/core/theme/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class SplashPage extends StatelessWidget {
+class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
+
+  @override
+  State<SplashPage> createState() => _SplashPageState();
+}
+
+class _SplashPageState extends State<SplashPage> {
+  @override
+  initState() {
+    super.initState();
+    redirect();
+  }
+
+  Future<void> redirect() async {
+    await Future.delayed(Duration(milliseconds: 3000), () {
+      if (mounted) GoRouter.of(context).pushReplacement('/home');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

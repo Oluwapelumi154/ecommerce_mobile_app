@@ -5,6 +5,8 @@ class Product {
   final int price;
   final String description;
   final int rating;
+  final int slashPrice;
+  List<Map<String, dynamic>>? reviews = [];
   Product({
     required this.id,
     required this.image,
@@ -12,5 +14,7 @@ class Product {
     required this.title,
     required this.description,
     required this.rating,
+    required this.slashPrice,
+    this.reviews,
   });
 }

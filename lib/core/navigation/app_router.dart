@@ -1,3 +1,4 @@
+import 'package:ecommerce_mobile_app/core/navigation/route_paths.dart';
 import 'package:ecommerce_mobile_app/features/cart/presentation/pages/cart_page.dart';
 import 'package:ecommerce_mobile_app/features/home/presentation/pages/home_page.dart';
 import 'package:ecommerce_mobile_app/features/product/presentation/pages/product_detail.dart';
@@ -9,25 +10,27 @@ import 'package:go_router/go_router.dart';
 final AppRouter = GoRouter(
   routes: [
     GoRoute(
-      path: "/splash",
+      path: RoutePaths.splash,
       builder: (BuildContext context, GoRouterState state) {
         return SplashPage();
       },
     ),
     GoRoute(
-      path: "/home",
+      path: RoutePaths.home,
       builder: (BuildContext context, GoRouterState state) {
         return HomePage();
       },
     ),
     GoRoute(
-      path: '/',
+      path: RoutePaths.productDetail,
       builder: (BuildContext context, GoRouterState state) {
-        return ProductDetailPage();
+        final id = state.pathParameters['id'] ?? '';
+        int productId = int.parse(id);
+        return ProductDetailPage(productId: productId);
       },
     ),
     GoRoute(
-      path: "/cart",
+      path: RoutePaths.cart,
       builder: (BuildContext context, GoRouterState state) {
         return CartPage();
       },
