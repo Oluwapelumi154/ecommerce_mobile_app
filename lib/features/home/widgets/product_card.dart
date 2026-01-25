@@ -61,7 +61,7 @@ class ProductCard extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    price.toString(),
+                    '\$${price.toString()}',
                     style: Theme.of(context).textTheme.titleSmall?.copyWith(
                       color: AppColors.black500,
                       fontSize: 18,

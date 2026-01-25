@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   go_router: ^17.0.1
   flutter_rating: ^2.0.2
+  flutter_lucide: ^1.8.2
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +71,49 @@ flutter:
     - assets/images/products/nike-4.png
     - assets/images/products/nike.png
     - assets/images/products/product_detail_one.png
+    - assets/images/products/unsplash-1.jpg
+    - assets/images/products/unsplash-2.jpg
+    - assets/images/products/unsplash-3.jpg
+    - assets/images/products/unsplash-4.jpg
+    - assets/images/products/unsplash-5.jpg
+    - assets/images/products/unsplash-6.jpg
+    - assets/images/products/unsplash-7.jpg
+    - assets/images/products/unsplash-8.jpg
+    - assets/images/products/unsplash-9.jpg
+    - assets/images/products/unsplash-10.jpg
+    - assets/images/products/unsplash-11.jpg
+    - assets/images/products/unsplash-12.jpg
+    - assets/images/products/unsplash-13.jpg
+    - assets/images/products/unsplash-14.jpg
+    - assets/images/products/unsplash-15.jpg
+    - assets/images/products/unsplash-16.jpg
+    - assets/images/products/unsplash-17.jpg
+    - assets/images/products/unsplash-18.jpg
+    - assets/images/products/unsplash-19.jpg
+    - assets/images/products/unsplash-20.jpg
+    - assets/images/products/unsplash-21.jpg
+    - assets/images/products/unsplash-22.jpg
+    - assets/images/products/unsplash-23.jpg
+    - assets/images/products/unsplash-24.jpg
+    - assets/images/products/unsplash-25.jpg
+    - assets/images/products/unsplash-26.jpg
+    - assets/images/products/unsplash-27.jpg
+    - assets/images/products/unsplash-28.jpg
+    - assets/images/products/unsplash-29.jpg
+    - assets/images/products/unsplash-30.jpg
+    - assets/images/products/unsplash-31.jpg
+    - assets/images/products/unsplash-34.jpg
+
+
+
+
+
+
+
+
+
+
+
     - assets/icons/shopping-cart.png
     - assets/icons/favourite.png
 
@@ -85,12 +129,28 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: fonts/inter/Inter-Thin-Beta.otf
+          weight: 100
+        - asset: fonts/inter/Inter-ExtraLight-BETA.otf
+          weight: 200
+        - asset: fonts/inter/Inter-Light-BETA.otf
+          weight: 300
+        - asset: fonts/inter/Inter-Regular.otf
+          weight: 400
+        - asset: fonts/inter/Inter-Medium.otf
+          weight: 500
+        - asset: fonts/inter/Inter-SemiBold.otf
+          weight: 600
+        - asset: fonts/inter/Inter-Bold.otf
+          weight: 700
+        - asset: fonts/inter/Inter-ExtraBold.otf
+          weight: 800       
+        - asset: fonts/inter/Inter-Black.otf
+          weight: 900
+
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

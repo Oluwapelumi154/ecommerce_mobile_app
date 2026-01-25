@@ -1,5 +1,6 @@
 import 'package:ecommerce_mobile_app/core/theme/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:go_router/go_router.dart';
 
 class BottomBar extends StatefulWidget {
@@ -10,41 +11,50 @@ class BottomBar extends StatefulWidget {
 }
 
 class _BottomBarState extends State<BottomBar> {
-  int currentIndex = 0;
-
   @override
   initState() {
     super.initState();
   }
 
+  List<Map<String, dynamic>> navigationMenus = [
+    {"iconDefault": Icon(LucideIcons.house), "title": "Home", "path": "/home"},
+    {
+      "iconDefault": Icon(LucideIcons.search),
+      "title": "Search",
+      "path": "/search",
+    },
+    {
+      "iconDefault": Icon(LucideIcons.shopping_cart),
+      "title": "Cart",
+      "path": "/cart",
+    },
+    {
+      "iconDefault": Icon(LucideIcons.user),
+      "title": "Profile",
+      "path": "/profile",
+    },
+  ];
+
+  int _getCurrentIndex(BuildContext context) {
+    final String location = GoRouterState.of(context).uri.path;
+
+    // Find the index of the current route
+    for (int i = 0; i < navigationMenus.length; i++) {
+      if (location.startsWith(navigationMenus[i]['path']!)) {
+        return i;
+      }
+    }
+    return 0; // Default to home if no match
+  }
+
+  void onItemTapped(int selectedIndex) {
+    final menu = navigationMenus[selectedIndex];
+    context.push(menu['path']!);
+  }
+
   @override
   Widget build(BuildContext context) {
-    List<Map<String, dynamic>> NavigationMenus = [
-      {"iconDefault": Icon(Icons.home), "title": "Home", "path": "/home"},
-      {
-        "iconDefault": Icon(Icons.search_outlined),
-        "title": "Search",
-        "path": "/search",
-      },
-      {
-        "iconDefault": Icon(Icons.shopping_cart_outlined),
-        "title": "Cart",
-        "path": "/cart",
-      },
-      {
-        "iconDefault": Icon(Icons.person_2_outlined),
-        "title": "Profile",
-        "path": "/profile",
-      },
-    ];
-
-    void onItemTapped(int selectedIndex) {
-      final menu = NavigationMenus[selectedIndex];
-      setState(() {
-        currentIndex = selectedIndex;
-      });
-      context.push(menu['path']!);
-    }
+    final currentIndex = _getCurrentIndex(context);
 
     return Container(
       decoration: BoxDecoration(
@@ -56,12 +66,18 @@ class _BottomBarState extends State<BottomBar> {
         selectedItemColor: AppColors.primaryColor,
         unselectedItemColor: AppColors.black100,
         type: BottomNavigationBarType.fixed,
-        selectedLabelStyle: TextStyle(fontSize: 14),
-        unselectedLabelStyle: TextStyle(fontSize: 14),
+        selectedLabelStyle: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+        ),
+        unselectedLabelStyle: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+        ),
         iconSize: 27,
         onTap: onItemTapped,
-        items: List.generate(NavigationMenus.length, (index) {
-          final data = NavigationMenus[index];
+        items: List.generate(navigationMenus.length, (index) {
+          final data = navigationMenus[index];
           return BottomNavigationBarItem(
             icon: data['iconDefault']!,
             label: data['title']!,

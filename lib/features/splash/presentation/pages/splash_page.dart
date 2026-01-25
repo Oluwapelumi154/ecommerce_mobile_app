@@ -25,21 +25,39 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.primaryColor,
       body: SafeArea(
+        bottom: false,
+        top: false,
         child: Container(
           width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.only(right: 15, left: 15, top: 10, bottom: 10),
-          color: AppColors.primaryColor,
+          padding: EdgeInsets.only(
+            right: 15,
+            left: 15,
+            top: 10,
+            bottom: MediaQuery.of(context).viewPadding.bottom + 0.8,
+          ),
+          decoration: BoxDecoration(color: Color(0xFFF8F9FA)),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Spacer(),
               Text(
-                'Shoe.com',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
+                'Shoevio',
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  fontSize: 45,
+                  color: AppColors.primaryColor,
+                  fontWeight: FontWeight.w700,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+              Spacer(),
+              Text(
+                'Version 1.0',
+                style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.black300,
                 ),
               ),
             ],

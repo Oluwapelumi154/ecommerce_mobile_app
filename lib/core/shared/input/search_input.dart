@@ -1,5 +1,6 @@
 import 'package:ecommerce_mobile_app/core/theme/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_lucide/flutter_lucide.dart';
 
 class SearchInput extends StatelessWidget {
   const SearchInput({super.key});
@@ -24,7 +25,10 @@ class SearchInput extends StatelessWidget {
                   right: 13,
                 ),
                 hintText: "Search 'Mans Shoes",
-                hintStyle: TextStyle(color: AppColors.black300),
+                hintStyle: TextStyle(
+                  color: AppColors.black300,
+                  fontWeight: FontWeight.w500,
+                ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                   borderSide: BorderSide(color: AppColors.black100),
@@ -53,9 +57,10 @@ class SearchInput extends StatelessWidget {
               ),
               onPressed: () {},
               icon: Icon(
-                Icons.search_outlined,
+                LucideIcons.search,
                 color: AppColors.white,
-                weight: 30,
+                fontWeight: FontWeight.w600,
+                size: 25,
               ),
             ),
           ),

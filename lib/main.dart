@@ -7,7 +7,7 @@ void main() {
     MaterialApp.router(
       routerConfig: AppRouter,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme,
+      theme: AppTheme.lightTheme,
     ),
   );
 }

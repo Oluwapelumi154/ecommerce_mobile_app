@@ -14,8 +14,9 @@ class CouponInput extends StatelessWidget {
           child: Text(
             'Apply',
             style: Theme.of(context).textTheme.titleSmall?.copyWith(
-              fontSize: 15,
+              fontSize: 17.5,
               color: AppColors.primaryColor,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ),

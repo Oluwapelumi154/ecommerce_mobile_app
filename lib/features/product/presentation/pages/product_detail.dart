@@ -1,10 +1,9 @@
 import 'package:ecommerce_mobile_app/core/constants/asset_constants.dart';
-import 'package:ecommerce_mobile_app/core/navigation/route_paths.dart';
 import 'package:ecommerce_mobile_app/core/theme/colors.dart';
 import 'package:ecommerce_mobile_app/features/home/data/repositories/product_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:flutter_rating/flutter_rating.dart';
-import 'package:go_router/go_router.dart';
 
 class ProductDetailPage extends StatelessWidget {
   final int productId;
@@ -15,36 +14,30 @@ class ProductDetailPage extends StatelessWidget {
     final product = products.firstWhere((product) => product.id == productId);
 
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        centerTitle: true,
+        title: Text(
+          'Product Details',
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+            fontSize: 21,
+            fontWeight: FontWeight.w700,
+            color: AppColors.black500,
+          ),
+        ),
+      ),
       body: SafeArea(
         child: ListView(
           children: [
-            Stack(
-              children: [
-                Positioned(
-                  child: Image.asset(product.image, width: 398, height: 398),
-                ),
-                Positioned(
-                  top: 10,
-                  left: 14,
-                  child: SizedBox(
-                    width: 45,
-                    height: 45,
-                    child: IconButton(
-                      onPressed: () {
-                        GoRouter.of(context).push(RoutePaths.home);
-                      },
-                      icon: Icon(Icons.arrow_back_ios),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  bottom: 10,
-                  left: 0,
-                  right: 0,
-                  child: Text('hello', textAlign: TextAlign.center),
-                ),
-              ],
+            Image.asset(
+              product.image,
+              width: 398,
+              height: 398,
+              fit: BoxFit.cover,
             ),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
               child: Column(
@@ -58,14 +51,26 @@ class ProductDetailPage extends StatelessWidget {
                       Text(
                         product.title,
                         style: Theme.of(context).textTheme.titleMedium
-                            ?.copyWith(fontSize: 20, color: AppColors.black500),
+                            ?.copyWith(
+                              fontSize: 20,
+                              color: AppColors.black500,
+                              fontWeight: FontWeight.w700,
+                            ),
                       ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Image.asset(
-                          AssetConstants.favouriteIcon,
-                          width: 20,
-                          height: 20,
+                      SizedBox(
+                        width: 45,
+                        height: 45,
+                        child: IconButton(
+                          style: IconButton.styleFrom(
+                            backgroundColor: AppColors.gray300,
+                          ),
+                          onPressed: () {},
+                          icon: Icon(
+                            LucideIcons.heart,
+                            size: 27,
+                            color: AppColors.primaryColor,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                       ),
                     ],
@@ -73,21 +78,29 @@ class ProductDetailPage extends StatelessWidget {
                   SizedBox(height: 10),
                   Row(
                     children: [
-                      StarRating(mainAxisAlignment: MainAxisAlignment.start),
+                      StarRating(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        size: 27,
+                        borderColor: Colors.amber,
+                        starCount: 5,
+                        rating: 2,
+                        color: Colors.amber,
+                      ),
                       SizedBox(width: 6),
                       Text(
                         '(20)',
-                        style: Theme.of(
-                          context,
-                        ).textTheme.bodyMedium?.copyWith(fontSize: 14),
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ],
                   ),
                   SizedBox(height: 15),
                   Text(
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      fontSize: 15.3,
-                      fontWeight: FontWeight.w300,
+                      fontSize: 15.5,
+                      fontWeight: FontWeight.w400,
                       color: AppColors.black500,
                     ),
                     product.description,
@@ -95,18 +108,26 @@ class ProductDetailPage extends StatelessWidget {
                   SizedBox(height: 16),
                   Row(
                     children: [
-                      Text('\$${product.price}'),
+                      Text(
+                        '\$${product.price}',
+                        style: Theme.of(context).textTheme.titleMedium
+                            ?.copyWith(
+                              fontSize: 23,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.black500,
+                            ),
+                      ),
                       SizedBox(width: 10),
                       Text(
                         '\$${product.slashPrice}',
                         style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                          fontSize: 17,
+                          fontSize: 20,
                           decoration: TextDecoration.lineThrough,
                           decorationStyle: TextDecorationStyle.solid,
                           decorationThickness: 2,
                           decorationColor: AppColors.red,
                           color: AppColors.red,
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ],
@@ -117,7 +138,8 @@ class ProductDetailPage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: Padding(
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(color: AppColors.white),
         padding: EdgeInsets.fromLTRB(
           18,
           15,
@@ -142,7 +164,7 @@ class ProductDetailPage extends StatelessWidget {
                   child: Text(
                     'Buy Now',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontSize: 15,
+                      fontSize: 17.5,
                       color: AppColors.white,
                       fontWeight: FontWeight.w600,
                     ),
@@ -157,16 +179,17 @@ class ProductDetailPage extends StatelessWidget {
               child: IconButton(
                 hoverColor: AppColors.primaryColor,
                 style: IconButton.styleFrom(
-                  side: BorderSide(color: AppColors.primaryColor),
+                  side: BorderSide(color: AppColors.primaryColor, width: 1.5),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadiusGeometry.circular(13),
                   ),
                 ),
                 onPressed: () {},
-                icon: Image.asset(
-                  AssetConstants.shoppingCartIcon,
-                  width: 43,
-                  height: 43,
+                icon: Icon(
+                  LucideIcons.shopping_cart,
+                  color: AppColors.primaryColor,
+                  fontWeight: FontWeight.w500,
+                  size: 27,
                 ),
               ),
             ),

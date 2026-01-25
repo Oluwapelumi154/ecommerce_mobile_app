@@ -23,7 +23,6 @@ class ProductCategories extends StatelessWidget {
           final data = categories[index];
           return TextButton(
             onPressed: () => onClick(index),
-
             style: TextButton.styleFrom(
               foregroundColor: AppColors.white,
               shape: RoundedRectangleBorder(
@@ -46,7 +45,7 @@ class ProductCategories extends StatelessWidget {
                 color: categoryIndex == index
                     ? AppColors.white
                     : AppColors.black100,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
               ),
             ),
           );
