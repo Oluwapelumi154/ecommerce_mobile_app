@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                       style: IconButton.styleFrom(
                         backgroundColor: AppColors.gray300,
                       ),
-                      icon: Icon(LucideIcons.notebook_pen),
+                      icon: Icon(LucideIcons.bell, color: AppColors.black500),
                     ),
                   ),
                 ],

@@ -1,5 +1,7 @@
 import 'package:ecommerce_mobile_app/core/navigation/route_paths.dart';
 import 'package:ecommerce_mobile_app/core/shared/scalfold_with_bottom_bar.dart';
+import 'package:ecommerce_mobile_app/features/auth/presentation/pages/sign_in.dart';
+import 'package:ecommerce_mobile_app/features/auth/presentation/pages/sign_up.dart';
 import 'package:ecommerce_mobile_app/features/cart/presentation/pages/cart_page.dart';
 import 'package:ecommerce_mobile_app/features/home/presentation/pages/home_page.dart';
 import 'package:ecommerce_mobile_app/features/product/presentation/pages/product_detail.dart';
@@ -21,18 +23,18 @@ final AppRouter = GoRouter(
             return HomePage();
           },
         ),
-        GoRoute(
-          path: RoutePaths.profile,
-          builder: (BuildContext context, GoRouterState state) {
-            return ProfilePage();
-          },
-        ),
       ],
     ),
     GoRoute(
       path: RoutePaths.splash,
       builder: (BuildContext context, GoRouterState state) {
         return SplashPage();
+      },
+    ),
+    GoRoute(
+      path: RoutePaths.profile,
+      builder: (BuildContext context, GoRouterState state) {
+        return ProfilePage();
       },
     ),
 
@@ -48,6 +50,18 @@ final AppRouter = GoRouter(
       path: RoutePaths.cart,
       builder: (BuildContext context, GoRouterState state) {
         return CartPage();
+      },
+    ),
+    GoRoute(
+      path: RoutePaths.signin,
+      builder: (BuildContext context, GoRouterState state) {
+        return SignInPage();
+      },
+    ),
+    GoRoute(
+      path: RoutePaths.signup,
+      builder: (BuildContext context, GoRouterState state) {
+        return SignUpPage();
       },
     ),
     GoRoute(

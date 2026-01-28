@@ -1,4 +1,6 @@
+import 'package:ecommerce_mobile_app/core/navigation/route_paths.dart';
 import 'package:ecommerce_mobile_app/core/theme/colors.dart';
+import 'package:ecommerce_mobile_app/features/splash/presentation/widgets/logo.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -18,7 +20,7 @@ class _SplashPageState extends State<SplashPage> {
 
   Future<void> redirect() async {
     await Future.delayed(Duration(milliseconds: 3000), () {
-      if (mounted) GoRouter.of(context).pushReplacement('/home');
+      if (mounted) GoRouter.of(context).pushReplacement(RoutePaths.signin);
     });
   }
 
@@ -42,15 +44,7 @@ class _SplashPageState extends State<SplashPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Spacer(),
-              Text(
-                'Shoevio',
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontSize: 45,
-                  color: AppColors.primaryColor,
-                  fontWeight: FontWeight.w700,
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
+              Logo(),
               Spacer(),
               Text(
                 'Version 1.0',

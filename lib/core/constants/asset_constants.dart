@@ -43,4 +43,6 @@ class AssetConstants {
   static final String unsplash30 = "assets/images/products/unsplash-30.jpg";
   static final String unsplash31 = "assets/images/products/unsplash-31.jpg";
   static final String unsplash34 = "assets/images/products/unsplash-34.jpg";
+  static final String googleIcon = "assets/icons/google.png";
+  static final String facebookIcon = "assets/icons/facebook.png";
 }

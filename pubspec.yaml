@@ -103,6 +103,8 @@ flutter:
     - assets/images/products/unsplash-30.jpg
     - assets/images/products/unsplash-31.jpg
     - assets/images/products/unsplash-34.jpg
+    - assets/icons/facebook.png
+    - assets/icons/google.png
 
 
 
