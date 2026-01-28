@@ -37,6 +37,7 @@ dependencies:
   go_router: ^17.0.1
   flutter_rating: ^2.0.2
   flutter_lucide: ^1.8.2
+  intl_phone_number_input_v2: ^0.0.9
 
 dev_dependencies:
   flutter_test:

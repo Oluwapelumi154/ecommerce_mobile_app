@@ -1,4 +1,6 @@
 import 'package:ecommerce_mobile_app/core/navigation/route_paths.dart';
+import 'package:ecommerce_mobile_app/core/shared/input/date_input.dart';
+import 'package:ecommerce_mobile_app/core/shared/input/phone_number_input.dart';
 import 'package:ecommerce_mobile_app/core/shared/input/text_input.dart';
 import 'package:ecommerce_mobile_app/core/theme/colors.dart';
 import 'package:ecommerce_mobile_app/features/splash/presentation/widgets/logo.dart';
@@ -14,10 +16,9 @@ class SignUpPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
+          width: MediaQuery.of(context).size.width,
           padding: EdgeInsets.only(right: 18, left: 18, top: 10, bottom: 10),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+          child: ListView(
             children: [
               Row(
                 children: [
@@ -32,8 +33,16 @@ class SignUpPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 15),
-              Logo(size: 30),
+              SizedBox(height: 12),
+              // Logo(size: 30),
+              Text(
+                'Sign up',
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  fontSize: 40,
+                  color: AppColors.black500,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
               SizedBox(height: 10),
               Text(
                 'Create an account to continue!',
@@ -46,6 +55,8 @@ class SignUpPage extends StatelessWidget {
               SizedBox(height: 10),
               TextInput(label: 'Full Name'),
               TextInput(label: 'Email'),
+              DateInput(label: "Date of Birth"),
+              PhoneNumberInput(),
               TextInput(label: 'Set Password'),
               SizedBox(height: 30),
               SizedBox(
