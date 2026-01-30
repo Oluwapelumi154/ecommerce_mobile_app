@@ -4,6 +4,7 @@ import 'package:ecommerce_mobile_app/features/auth/presentation/pages/sign_in.da
 import 'package:ecommerce_mobile_app/features/auth/presentation/pages/sign_up.dart';
 import 'package:ecommerce_mobile_app/features/cart/presentation/pages/cart_page.dart';
 import 'package:ecommerce_mobile_app/features/home/presentation/pages/home_page.dart';
+import 'package:ecommerce_mobile_app/features/notification/presentation/pages/notification.dart';
 import 'package:ecommerce_mobile_app/features/product/presentation/pages/product_detail.dart';
 import 'package:ecommerce_mobile_app/features/profile/presentation/pages/profile_page.dart';
 import 'package:ecommerce_mobile_app/features/search/presentation/pages/product_search.dart';
@@ -29,6 +30,12 @@ final AppRouter = GoRouter(
       path: RoutePaths.splash,
       builder: (BuildContext context, GoRouterState state) {
         return SplashPage();
+      },
+    ),
+    GoRoute(
+      path: RoutePaths.notification,
+      builder: (BuildContext content, GoRouterState state) {
+        return const NotificationPage();
       },
     ),
     GoRoute(

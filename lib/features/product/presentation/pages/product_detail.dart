@@ -1,4 +1,3 @@
-import 'package:ecommerce_mobile_app/core/constants/asset_constants.dart';
 import 'package:ecommerce_mobile_app/core/theme/colors.dart';
 import 'package:ecommerce_mobile_app/features/home/data/repositories/product_repository.dart';
 import 'package:flutter/material.dart';

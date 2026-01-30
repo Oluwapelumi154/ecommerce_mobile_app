@@ -34,6 +34,7 @@ class SignInPage extends StatelessWidget {
                   fontSize: 40,
                   color: AppColors.black500,
                   fontWeight: FontWeight.w700,
+                  height: 1.15,
                 ),
               ),
               SizedBox(height: 14),
@@ -45,8 +46,16 @@ class SignInPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 8),
-              TextInput(label: 'Email', keyboardType: TextInputType.text),
-              TextInput(label: 'Password'),
+              TextInput(
+                label: 'Email',
+                hintText: 'Enter your email',
+                keyboardType: TextInputType.text,
+              ),
+              TextInput(
+                label: 'Password',
+                hintText: 'Enter your password',
+                keyboardType: TextInputType.visiblePassword,
+              ),
               SizedBox(height: 19),
               Text(
                 'Forgot Password?',
@@ -68,7 +77,7 @@ class SignInPage extends StatelessWidget {
                   style: FilledButton.styleFrom(
                     backgroundColor: AppColors.primaryColor,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusGeometry.circular(17),
+                      borderRadius: BorderRadiusGeometry.circular(50),
                     ),
                   ),
                   child: Text(
@@ -104,7 +113,7 @@ class SignInPage extends StatelessWidget {
                 child: TextButton.icon(
                   style: TextButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusGeometry.circular(16),
+                      borderRadius: BorderRadiusGeometry.circular(50),
                       side: BorderSide(color: AppColors.gray400),
                     ),
                   ),
@@ -133,7 +142,7 @@ class SignInPage extends StatelessWidget {
                 child: TextButton.icon(
                   style: TextButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusGeometry.circular(16),
+                      borderRadius: BorderRadiusGeometry.circular(50),
                       side: BorderSide(color: AppColors.gray400),
                     ),
                   ),

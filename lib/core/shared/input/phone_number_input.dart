@@ -1,6 +1,6 @@
 import 'package:ecommerce_mobile_app/core/theme/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:intl_phone_number_input_v2/intl_phone_number_input.dart';
+import 'package:flutter_intl_phone_field/flutter_intl_phone_field.dart';
 
 class PhoneNumberInput extends StatelessWidget {
   const PhoneNumberInput({super.key});
@@ -22,24 +22,30 @@ class PhoneNumberInput extends StatelessWidget {
             ),
           ),
           SizedBox(height: 3),
-
-          InternationalPhoneNumberInput(
-            inputDecoration: InputDecoration(
+          IntlPhoneField(
+            dropdownTextStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
+              fontSize: 15,
+              color: AppColors.black500,
+              fontWeight: FontWeight.w600,
+            ),
+            disableLengthCheck: true,
+            decoration: InputDecoration(
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-                borderSide: BorderSide(color: AppColors.gray400),
+                borderSide: BorderSide(color: AppColors.gray400, width: 1),
+                borderRadius: BorderRadius.circular(50),
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-                borderSide: BorderSide(color: AppColors.gray400),
+                borderSide: BorderSide(color: AppColors.gray400, width: 1),
+                borderRadius: BorderRadius.circular(50),
               ),
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15),
-                borderSide: BorderSide(color: AppColors.primaryColor),
+                borderSide: BorderSide(color: AppColors.gray400, width: 1),
+                borderRadius: BorderRadius.circular(50),
               ),
             ),
-            onInputChanged: (value) {
-              print(value);
+            initialCountryCode: 'IN',
+            onChanged: (phone) {
+              print(phone.completeNumber);
             },
           ),
         ],

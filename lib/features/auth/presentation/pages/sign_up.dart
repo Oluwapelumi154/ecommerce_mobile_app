@@ -3,7 +3,6 @@ import 'package:ecommerce_mobile_app/core/shared/input/date_input.dart';
 import 'package:ecommerce_mobile_app/core/shared/input/phone_number_input.dart';
 import 'package:ecommerce_mobile_app/core/shared/input/text_input.dart';
 import 'package:ecommerce_mobile_app/core/theme/colors.dart';
-import 'package:ecommerce_mobile_app/features/splash/presentation/widgets/logo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:go_router/go_router.dart';
@@ -52,12 +51,16 @@ class SignUpPage extends StatelessWidget {
                   color: AppColors.black500,
                 ),
               ),
-              SizedBox(height: 10),
-              TextInput(label: 'Full Name'),
-              TextInput(label: 'Email'),
+              SizedBox(height: 5),
+              TextInput(label: 'Full Name', hintText: 'Enter your full Name'),
+              TextInput(label: 'Email', hintText: 'Enter your email'),
               DateInput(label: "Date of Birth"),
               PhoneNumberInput(),
-              TextInput(label: 'Set Password'),
+              TextInput(
+                label: 'Set Password',
+                hintText: 'Enter your password',
+                keyboardType: TextInputType.visiblePassword,
+              ),
               SizedBox(height: 30),
               SizedBox(
                 height: 52,
@@ -65,7 +68,7 @@ class SignUpPage extends StatelessWidget {
                   style: FilledButton.styleFrom(
                     backgroundColor: AppColors.primaryColor,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusGeometry.circular(16),
+                      borderRadius: BorderRadiusGeometry.circular(50),
                     ),
                   ),
                   onPressed: () {},

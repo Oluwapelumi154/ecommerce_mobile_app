@@ -1,3 +1,4 @@
+import 'package:ecommerce_mobile_app/core/navigation/route_paths.dart';
 import 'package:ecommerce_mobile_app/core/shared/input/search_input.dart';
 import 'package:ecommerce_mobile_app/core/theme/colors.dart';
 import 'package:ecommerce_mobile_app/features/home/data/models/product.dart';
@@ -8,6 +9,7 @@ import 'package:ecommerce_mobile_app/features/home/widgets/product_card.dart';
 import 'package:ecommerce_mobile_app/features/home/widgets/product_categories.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -80,7 +82,9 @@ class _HomePageState extends State<HomePage> {
                     width: 50,
                     height: 50,
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        GoRouter.of(context).push(RoutePaths.notification);
+                      },
                       style: IconButton.styleFrom(
                         backgroundColor: AppColors.gray300,
                       ),
