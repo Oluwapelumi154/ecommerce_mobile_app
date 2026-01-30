@@ -17,6 +17,7 @@ class ProductDetailPage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
         centerTitle: true,
         title: Text(
           'Product Details',

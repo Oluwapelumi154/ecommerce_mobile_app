@@ -38,6 +38,7 @@ dependencies:
   flutter_rating: ^2.0.2
   flutter_lucide: ^1.8.2
   flutter_intl_phone_field: ^0.0.7
+  light_dark_theme_toggle: ^1.1.2
 
 dev_dependencies:
   flutter_test:

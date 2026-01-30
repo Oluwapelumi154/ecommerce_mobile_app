@@ -13,6 +13,7 @@ class CartPage extends StatelessWidget {
       backgroundColor: AppColors.white,
       appBar: AppBar(
         elevation: 0,
+        surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.transparent,
         centerTitle: true,
         title: Text(
@@ -25,7 +26,7 @@ class CartPage extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 17),
         child: Column(
           children: [
             Expanded(
@@ -45,7 +46,7 @@ class CartPage extends StatelessWidget {
             bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
           child: Container(
-            padding: EdgeInsets.only(right: 20, left: 20, top: 25, bottom: 20),
+            padding: EdgeInsets.only(right: 20, left: 20, top: 25, bottom: 0),
             decoration: BoxDecoration(
               color: AppColors.white,
               borderRadius: BorderRadius.only(

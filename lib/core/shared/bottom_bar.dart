@@ -1,3 +1,4 @@
+import 'package:ecommerce_mobile_app/core/navigation/route_paths.dart';
 import 'package:ecommerce_mobile_app/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
@@ -21,17 +22,17 @@ class _BottomBarState extends State<BottomBar> {
     {
       "iconDefault": Icon(LucideIcons.search),
       "title": "Search",
-      "path": "/search",
+      "path": RoutePaths.search,
     },
     {
       "iconDefault": Icon(LucideIcons.shopping_cart),
       "title": "Cart",
-      "path": "/cart",
+      "path": RoutePaths.cart,
     },
     {
       "iconDefault": Icon(LucideIcons.user),
-      "title": "Profile",
-      "path": "/profile",
+      "title": "Settings",
+      "path": RoutePaths.setting,
     },
   ];
 

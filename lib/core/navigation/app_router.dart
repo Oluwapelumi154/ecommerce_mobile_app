@@ -1,12 +1,13 @@
 import 'package:ecommerce_mobile_app/core/navigation/route_paths.dart';
 import 'package:ecommerce_mobile_app/core/shared/scalfold_with_bottom_bar.dart';
+import 'package:ecommerce_mobile_app/features/account_information/presentation/pages/account_page.dart';
 import 'package:ecommerce_mobile_app/features/auth/presentation/pages/sign_in.dart';
 import 'package:ecommerce_mobile_app/features/auth/presentation/pages/sign_up.dart';
 import 'package:ecommerce_mobile_app/features/cart/presentation/pages/cart_page.dart';
 import 'package:ecommerce_mobile_app/features/home/presentation/pages/home_page.dart';
 import 'package:ecommerce_mobile_app/features/notification/presentation/pages/notification.dart';
 import 'package:ecommerce_mobile_app/features/product/presentation/pages/product_detail.dart';
-import 'package:ecommerce_mobile_app/features/profile/presentation/pages/profile_page.dart';
+import 'package:ecommerce_mobile_app/features/settings/presentation/pages/settings_page.dart';
 import 'package:ecommerce_mobile_app/features/search/presentation/pages/product_search.dart';
 import 'package:ecommerce_mobile_app/features/splash/presentation/pages/splash_page.dart';
 import 'package:flutter/material.dart';
@@ -39,9 +40,16 @@ final AppRouter = GoRouter(
       },
     ),
     GoRoute(
-      path: RoutePaths.profile,
+      path: RoutePaths.setting,
       builder: (BuildContext context, GoRouterState state) {
         return ProfilePage();
+      },
+    ),
+
+    GoRoute(
+      path: RoutePaths.account,
+      builder: (BuildContext context, GoRouterState state) {
+        return AccountPage();
       },
     ),
 
